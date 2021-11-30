@@ -1,0 +1,64 @@
+/* ==================================================
+--- 01 TYPOGRAPHY SYSTEM
+  1. Font Sizes in PX
+  ----- 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+  
+  Default browser font size is 16px. We will set our font-size to 10px and to make it responsive. *10 / 16 = 0.625 * 100 = 62.5%
+  
+  2. Font Weights
+  ----- Light: 100
+  ----- Default: 300
+  ----- Medium: 400
+  ----- Bold: 700
+  ----- Extra Bold: 900
+  
+  3. Line Heights
+  ----- Default: 1
+  ----- Small: 
+  ----- Medium: 
+  ----- Large: 1.8
+  ----- Paragraph Default: 1.6
+  
+--- 02 COLOR SYSTEM
+  
+  1. Light Green - #7ed56f
+  2. Medium Green - #55c57a
+  3. Dark Green - #28b485
+
+--- 03 IMAGES AND ILLUSTRATIONS
+  1. Pexels
+  2. unsplash
+
+--- 04 ICONS
+  1. ionicons
+
+--- 05 SHADOWS
+  1. Light 
+  2. Dark 
+
+--- 06 BORDER-RADIUS
+  1. Default: 5px
+  2. Small: 11px
+  3. Medium: 100px
+  4. Round: 50%
+
+--- 07 WHITESPACES
+  1. Spacing in PX
+  ----- 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+================================================== */
+
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/utilities";
+
+@import "./components/button";
+
+@import "./layout/grid";
+@import "./layout/header";
+
+@import "./pages/home";

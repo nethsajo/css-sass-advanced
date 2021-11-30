@@ -1,0 +1,33 @@
+/* Clip Path Direction: Top left, top right, bottom left, bottom right */
+
+clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+/* Call the created animation */
+animation-name: moveInLeft;
+
+/* Duration of animation */
+animation-duration: 1s;
+
+/* Repeat 3 times */
+/* animation-iteration-count: 3; */
+
+animation-timing-function: ease-out;
+
+/* Wait 3 secs before the animation starts */
+/* animation-delay: 3s; */
+
+/* Short hand */
+animation: moveInRight 1s ease-out;
+
+@keyframes moveInBottom {
+  /* This styles applies before the animation starts simply by using the animation-fill-mode property and set it to backwards */
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
