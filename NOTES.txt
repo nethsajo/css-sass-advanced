@@ -76,3 +76,23 @@ animation: moveInRight 1s ease-out;
     transform: rotateY(0);
   }
 }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+
+    //Object-fit: cover is actually similar to background-size: cover. The object-fit cover does is that the element will fill the entire parent while still maintaining its aspect ration
+    object-fit: cover;
+  }
+}
+
