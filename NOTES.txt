@@ -31,3 +31,48 @@ animation: moveInRight 1s ease-out;
     transform: translateY(0);
   }
 }
+
+.card {
+  //perspective property defines how far the object is away from the user. So, a lower value will result in a more intensive 3D effect than a higher value.
+  //perspective has to be on the parent element
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+
+  //All the elements are on position absolute and so they're also taken out of the natural flow. The cards out of their natural flow and therefore the parent collapsed and lost its height. So what we have to do is actually specify the same height that we gave to card__side
+  height: 50rem;
+
+  &__side {
+    background-color: orangered;
+    font-size: 2rem;
+    color: #fff;
+    height: 50rem;
+    transition: all 0.8s ease;
+    //The box should be on top of one another. So to do that, simply position both card__side into absolute. Always remember to give the parent a relative position (.card). Since we gave them a absolute position (card__side), the elements do is that they basically start fitting to their width, so set a width.
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    //This is basically hides the back part of an element
+    backface-visibility: hidden;
+
+    &--front {
+      background-color: orangered;
+    }
+
+    &--back {
+      background-color: green;
+      transform: rotateY(180deg);
+    }
+  }
+
+  //When the card is hovered then the card side will be transformed
+  //.card:hover .card__side
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+}
