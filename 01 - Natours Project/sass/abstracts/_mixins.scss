@@ -12,3 +12,63 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// MEDIA QUERY MANAGER
+
+/*
+0-320px - Phone XS
+320px-600px - Phone
+600-900px - Tablet portrait
+900-1200px - Tablet landscape
+[1200-1800] is where our normal style apply
+1800px+ - big desktop 
+*/
+
+/*$breakpoint argument choices:
+-phone
+-tab-portrait
+-tab-landscape
+-big-desktop
+
+ORDER: Base + Typopgraphy > General Layout + Grid > Page Layout > Components
+
+1em = 16px
+
+*/
+@mixin respond($breakpoint) {
+  //320PX
+  @if $breakpoint == phone-xs {
+    @media (max-width: 20em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    //600PX
+    @media (max-width: 37.5em) {
+      //This basically allows us to pass a block of code into a mixin
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-portrait {
+    //900PX
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-landscape {
+    //1200PX
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    //1800PX
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

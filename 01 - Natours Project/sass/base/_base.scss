@@ -8,5 +8,30 @@
 
 html {
   // This defines what 1rem is
-  font-size: 62.5%;
+  font-size: 62.5%; //1rem = 10px; 10px/16px * 100 = 62.5%
+
+  @include respond(phone) {
+    // This is basically the content that I passed into the mixin
+    font-size: 50%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px; 12px/16px * 100 = 75%
+  }
+
+  @include respond(tab-landscape) {
+    font-size: 56.25%; //1rem = 9px; 9px/16px * 100 = 56.25%
+  }
+
+  @include respond(tab-portrait) {
+    font-size: 50%; //1rem = 8px; 8px/16px * 100 = 50%
+  }
+}
+
+body {
+  padding: 3.2rem;
+
+  @include respond(tab-portrait) {
+    padding: 0;
+  }
 }
