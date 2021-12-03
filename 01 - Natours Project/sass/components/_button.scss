@@ -2,14 +2,14 @@
   &, //this will translate to .btn
   &:link,
   &:visited {
-    display: inline-block;
-    font-size: $default-font-size;
-    text-decoration: none;
     text-transform: uppercase;
-    padding: 1.6rem 3.2rem;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
     border-radius: 10rem;
-    transition: all 0.3s;
+    transition: all 0.2s;
     position: relative;
+    font-size: $default-font-size;
 
     //Change for the button element
     border: none;
