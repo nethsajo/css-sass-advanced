@@ -123,6 +123,10 @@ USER NAVIGATION
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (max-width: $bp-xsmall) {
+      top: 0;
+    }
   }
 
   &__photo {
@@ -208,8 +212,7 @@ SIDE NAVIGATION
       }
 
       @media only screen and (max-width: $bp-smallest) {
-        flex-direction: column;
-        padding: 1.2rem;
+        padding: 1.2rem 0;
       }
     }
   }
@@ -262,9 +265,8 @@ HOTEL OVERVIEW
   align-items: center;
   border-bottom: var(--line);
 
-  @media only screen and (max-width: $bp-smallest) {
+  @media only screen and (max-width: $bp-xsmall) {
     flex-wrap: wrap;
-    align-items: center;
   }
 
   &__heading {
@@ -284,10 +286,14 @@ HOTEL OVERVIEW
     margin-right: auto;
     display: flex;
 
-    @media only screen and (max-width: $bp-smallest) {
-      margin-left: auto;
+    @media only screen and (max-width: $bp-xsmall) {
       margin-right: 0;
+      margin-left: auto;
     }
+
+    // @media only screen and (max-width: $bp-smallest) {
+    //   margin-left: auto;
+    // }
   }
 
   &__icon-star,
@@ -307,9 +313,15 @@ HOTEL OVERVIEW
     display: flex;
     align-items: center;
 
-    @media only screen and (max-width: $bp-smallest) {
+    @media only screen and (max-width: $bp-xsmall) {
+      flex: 0 0 50%;
       padding-left: 2.4rem;
     }
+
+    // @media only screen and (max-width: $bp-xsmall) {
+    //   flex: 0 0 50%;
+    //   order: 0;
+    // }
   }
 
   &__icon-location {
@@ -328,11 +340,8 @@ HOTEL OVERVIEW
     align-items: center;
     justify-content: center;
 
-    @media only screen and (max-width: $bp-small) {
+    @media only screen and (max-width: $bp-xsmall) {
       padding: 0 1.6rem;
-    }
-
-    @media only screen and (max-width: $bp-smallest) {
       margin-left: auto;
     }
   }
@@ -435,7 +444,7 @@ LISTS
     flex: 0 0 50%;
     margin-bottom: 0.8rem;
 
-    @media only screen and (max-width: $bp-smallest) {
+    @media only screen and (max-width: $bp-xsmall) {
       flex: 0 0 100%;
     }
   }
@@ -448,15 +457,18 @@ LISTS
     margin-right: 0.8rem;
 
     //Older browsers
-    // background-image: url(../img/chevron-thin-right.svg);
-    // background-size: cover;
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
 
-    //Newer browsers - Masks
-    background-color: var(--color-primary);
-    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-    mask-image: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask-size: cover;
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      //Newer browsers - Masks
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-image: none;
+    }
   }
 }
 
@@ -570,7 +582,7 @@ CALL TO ACTION
     padding: 2.4rem 0;
   }
 
-  @media only screen and (max-width: $bp-smallest) {
+  @media only screen and (max-width: $bp-small) {
     padding: 2.4rem;
   }
 
