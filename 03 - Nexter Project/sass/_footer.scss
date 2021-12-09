@@ -3,6 +3,10 @@
   grid-column: full-start / full-end;
 
   padding: 8rem;
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 6.4rem;
+  }
 }
 
 .nav {
@@ -24,6 +28,7 @@
     padding: 1.4rem;
     display: block;
     transition: all 0.3s;
+    line-height: 1.6;
   }
 
   &__link:hover,
@@ -42,4 +47,8 @@
   margin-right: auto;
   margin-left: auto;
   width: 70%;
+
+  @media only screen and (max-width: $bp-smallest) {
+    width: 100%;
+  }
 }

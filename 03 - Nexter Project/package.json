@@ -6,7 +6,7 @@
   "scripts": {
     "write:sass": "node-sass sass/main.scss css/styles.css",
     "watch:sass": "nodemon -e scss -x \"npm run write:sass\"",
-    "devserver": "live-server --browser=firefox",
+    "devserver": "live-server --browser=chrome",
     "start": "npm-run-all --parallel devserver watch:sass",
     "compile:sass": "node-sass ./sass/main.scss ./css/styles.comp.css --output-style expanded",
     "prefix:css": "postcss ./css/styles.comp.css -o ./css/styles.prefix.css --use autoprefixer",
